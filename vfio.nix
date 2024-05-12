@@ -1,5 +1,7 @@
 { pkgs, lib, config, ... }:
 
+
+
 let
   # RX 6650 XT
   gpuIDs = [
@@ -7,11 +9,6 @@ let
     "1002:ab28" # Audio
   ];
 in {
-
-  specialisation."VFIO".configuration = {
-    system.nixos.tags = [ "with-vfio" ];
-    vfio.enable = true;
-  };
 
   options.vfio.enable = with lib;
     mkEnableOption "Configure the machine for VFIO";
@@ -22,7 +19,6 @@ in {
         "vfio_pci"
         "vfio"
         "vfio_iommu_type1"
-        "vfio_virqfd"
       ];
 
       kernelParams = [
@@ -37,17 +33,5 @@ in {
     virtualisation.spiceUSBRedirection.enable = true;
   };
 
-  # Apps and packages
-  environment.systemPackages = with pkgs; [
-    looking-glass-client
-    virtmanager
-  ];
-
-  virtualisation.libvirtd = {
-    enable = true;
-    qemuOvmf = true;
-    qemuRunAsRoot = false;
-    onBoot = "ignore";
-    onShutdown = "shutdown";
-  };
+  # Added libvirtd and apps for the virtual machine in configuration.nix
 }
