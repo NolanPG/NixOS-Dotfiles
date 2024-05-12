@@ -15,7 +15,7 @@
     wireless.allowAuxiliaryImperativeNetworks = true;
 
     firewall = {
-      allowedTCPPorts = [ 80 443 8080 8081 8000 8001 3000 6600 7201];
+      allowedTCPPorts = [ 80 443 8080 8081 8000 8001 3000 6600 7201 ];
       allowedUDPPorts = [ 80 443 8080 8081 8000 8001 3000 6600 7201 51820 ];
       allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
       allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
