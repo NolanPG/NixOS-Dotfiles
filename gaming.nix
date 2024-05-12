@@ -14,7 +14,8 @@
     mangohud # Performance monitoring tool for Vulkan and OpenGL games
     osu-lazer-bin
     protonup-qt
-    wineWowPackages.waylandFull
+    winetricks
+    wineWowPackages.staging
     obs-studio
     kdePackages.kdenlive
   ];
