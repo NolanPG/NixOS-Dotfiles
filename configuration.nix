@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       ./gaming.nix
       ./network.nix
+      ./vfio.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -154,7 +155,25 @@
       ];
     })
 
+    # Apps for VFIO
+    looking-glass-client
+    virt-manager
+
   ];
+
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.ovmf.enable = true;
+    qemu.runAsRoot = false;
+    onBoot = "ignore";
+    onShutdown = "shutdown";
+  };
+
+  specialisation."VFIO".configuration = {
+    system.nixos.tags = [ "with-vfio" ];
+    vfio.enable = true;
+  };
+
 
   environment.variables = {
     # Force GTK apps to use QT Portal for opening folders or files (same as gtkUsePortal = true; but that's deprecated)
