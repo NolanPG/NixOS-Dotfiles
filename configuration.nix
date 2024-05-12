@@ -109,6 +109,7 @@
 
   environment.systemPackages = with pkgs; [
     libsForQt5.kservice # kbuildsycoca5
+    distrobox
 
     # Packages normally included in other distros by default
     lshw 
