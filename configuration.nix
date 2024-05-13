@@ -255,7 +255,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nolan.isNormalUser = true;
-  users.users.nolan.extraGroups = [ "networkmanager" "wheel" "docker" ];
+  users.users.nolan.extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older ` NixOS versions.
