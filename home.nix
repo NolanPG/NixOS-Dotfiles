@@ -67,8 +67,6 @@
       name = "Papirus Dark";
       package = pkgs.papirus-icon-theme;
     };
-
-    cursorTheme.name
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
