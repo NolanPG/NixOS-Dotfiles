@@ -53,16 +53,16 @@
     gamescopeSession.enable = true;
   };
 
-  #Enable Gamescopep
+  #Enable Gamescope
   programs.gamescope = {
     enable = true;
     package = pkgs.gamescope;
     capSysNice = true;
-    args = ["--prefer-vk-device 1002:73ff"];
+    args = ["--prefer-vk-device 1002:73ef"];
     env = {
       "__GLX_VENDOR_LIBRARY_NAME" = "amd";
       "DRI_PRIME" = "1";
-      "MESA_VK_DEVICE_SELECT" = "pci:1002:73ff";
+      "MESA_VK_DEVICE_SELECT" = "pci:1002:73ef";
       "__VK_LAYER_MESA_OVERLAY_CONFIG" = "ld.so.preload";
       "DISABLE_LAYER_AMD_SWITCHABLE_GRAPHICS_1" = "1";
     };
