@@ -55,6 +55,22 @@
     # '')
   ];
 
+  gtk = {
+    enable = true;
+
+    font = {
+      name = "IBM Plex Sans Light";
+      package = pkgs.ibm-plex;
+    };
+
+    iconTheme = {
+      name = "Papirus Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+
+    cursorTheme.name
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
