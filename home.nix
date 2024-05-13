@@ -35,6 +35,7 @@
     git
     gh # GitHub CLI Tool
     python3
+    papirus-icon-theme
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
