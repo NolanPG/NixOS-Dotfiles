@@ -130,6 +130,13 @@
     zlib
     unzip
 
+    # obs-studio dependencies
+    pciutils
+    rnnoise
+    mesa
+    fdk-aac-encoder
+    rav1e
+
     # Firefox dependencies
     ffmpeg_7-full
     mailcap # Helper application and MIME type associations for file types
