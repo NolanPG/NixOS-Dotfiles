@@ -6,7 +6,7 @@
 }:
 
 {
-    environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     bottles # Wine manager
     ryujinx # Nintendo Switch emulator
     sunshine # Remote gaming solution for streaming games over the internet
@@ -18,10 +18,17 @@
     wineWowPackages.waylandFull
     obs-studio
     kdePackages.kdenlive
-  ];
+
+    # OpenRGB dependency
+    i2c-tools
+];
 
   # RGB Configuration
-  services.hardware.openrgb.enable = true;
+  services.hardware.openrgb = {
+    enable = true;
+    motherboard = "amd";
+    package = pkgs.openrgb-with-all-plugins;
+  };
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
 
   hardware = {
