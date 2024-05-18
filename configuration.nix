@@ -124,6 +124,13 @@
     zlib
     unzip
 
+    # System Settings info panel dependencies
+    wayland-utils
+    vulkan-tools
+    glxinfo
+    virtualgl
+    clinfo
+
     # obs-studio dependencies
     pciutils
     rnnoise

@@ -18,9 +18,7 @@
     wineWowPackages.waylandFull
     obs-studio
     kdePackages.kdenlive
-
-    # OpenRGB dependency
-    i2c-tools
+    i2c-tools # OpenRGB dependency
 ];
 
   # RGB Configuration
@@ -30,6 +28,7 @@
     package = pkgs.openrgb-with-all-plugins;
   };
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
+  users.groups.i2c.members = [ "nolan" ]; # create i2c group and add default user to it
 
   hardware = {
     steam-hardware.enable = true;
