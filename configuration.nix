@@ -194,6 +194,16 @@
   # TODO there's a project https://github.com/gmodena/nix-flatpak that helps with making flatpak management declaratively I'll look into that
   services.flatpak.enable = true;
 
+  # Register AppImages as binary types
+  boot.binfmt.registrations.appimage = {
+    wrapInterpreterInShell = false;
+    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+    recognitionType = "magic";
+    offset = 0;
+    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+    magicOrExtension = ''\x7fELF....AI\x02'';
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
