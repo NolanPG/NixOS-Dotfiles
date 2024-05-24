@@ -132,6 +132,9 @@
     virtualgl
     clinfo
 
+    # create_ap (WiFi HotSpot) entropy daemon
+    haveged
+
     # obs-studio dependencies
     pciutils
     rnnoise
